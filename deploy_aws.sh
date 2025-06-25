@@ -10,7 +10,7 @@ sudo yum update -y
 sudo yum install -y python3 python3-pip
 
 # Navegar al directorio de la aplicación
-cd /home/ec2-user/Practica8
+cd /home/ec2-user/PracticaPWA
 
 # Instalar dependencias
 pip3 install -r requirements.txt --user
