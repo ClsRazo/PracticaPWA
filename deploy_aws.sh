@@ -37,7 +37,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 User=ec2-user
-WorkingDirectory=/home/ec2-user/Practica8
+WorkingDirectory=/home/ec2-user/PracticaPWA
 ExecStart=/home/ec2-user/.local/bin/python3 app.py
 Restart=always
 RestartSec=5
