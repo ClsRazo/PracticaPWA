@@ -1,15 +1,43 @@
 {
   "name": "PWA con Flask",
   "short_name": "PWAFlask",
+  "description": "Progressive Web App con Flask para gestión de artículos",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#317EFB",
+  "categories": ["productivity", "utilities"],
+  "lang": "es",
   "icons": [
     {
       "src": "icon.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Vista principal de la aplicación"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Vista móvil de la aplicación"
     }
   ]
 }

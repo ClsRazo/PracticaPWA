@@ -19,11 +19,11 @@ if (-not (Test-Path $KEY_PATH)) {
 
 # Subir archivos a EC2
 Write-Host "📤 Subiendo archivos..." -ForegroundColor Yellow
-scp -i $KEY_PATH -r * ec2-user@${EC2_IP}:~/Practica8/
+scp -i $KEY_PATH -r * ec2-user@${EC2_IP}:~/PracticaPWA/
 
 # Conectar y ejecutar el script de despliegue
 Write-Host "🔧 Ejecutando script de despliegue..." -ForegroundColor Yellow
-ssh -i $KEY_PATH ec2-user@$EC2_IP "chmod +x ~/Practica8/deploy_aws.sh && ~/Practica8/deploy_aws.sh"
+ssh -i $KEY_PATH ec2-user@$EC2_IP "chmod +x ~/PracticaPWA/deploy_aws.sh && ~/PracticaPWA/deploy_aws.sh"
 
 Write-Host "✅ Despliegue completado!" -ForegroundColor Green
 Write-Host "🌐 Tu aplicación está disponible en: http://${EC2_IP}:5003" -ForegroundColor Cyan
