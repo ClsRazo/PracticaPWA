@@ -25,7 +25,17 @@ sudo iptables -A INPUT -p tcp --dport 5003 -j ACCEPT
 # Crear directorio de logs si no existe
 mkdir -p logs
 
-echo "Instalando la aplicación como servicio..."
+echo "🔍 Detectando ruta de Python..."
+PYTHON_PATH=$(which python3)
+echo "Python encontrado en: $PYTHON_PATH"
+
+# Verificar que Python funciona
+if ! $PYTHON_PATH --version; then
+    echo "❌ Error: Python no funciona correctamente"
+    exit 1
+fi
+
+echo "📦 Instalando la aplicación como servicio..."
 
 # Crear archivo de servicio systemd
 sudo tee /etc/systemd/system/pwa-flask.service > /dev/null <<EOF
@@ -38,7 +48,7 @@ StartLimitIntervalSec=0
 Type=simple
 User=ec2-user
 WorkingDirectory=/home/ec2-user/PracticaPWA
-ExecStart=/home/ec2-user/.local/bin/python3 app.py
+ExecStart=$PYTHON_PATH app.py
 Restart=always
 RestartSec=5
 StandardOutput=journal
